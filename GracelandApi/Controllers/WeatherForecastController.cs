@@ -43,5 +43,13 @@ namespace GracelandApi.Controllers
             })
             .ToArray();
         }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("test")]
+        public string TestAPIPresent()
+        {
+            return "Api works!";
+        }
     }
 }
