@@ -47,9 +47,9 @@ namespace GracelandApi.Controllers
         [AllowAnonymous]
         [HttpGet]
         [Route("test")]
-        public string TestAPIPresent()
+        public IActionResult TestAPIPresent()
         {
-            return "Api works!";
+            return new JsonResult("Api Works!");
         }
     }
 }
