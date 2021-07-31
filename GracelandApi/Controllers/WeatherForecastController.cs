@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using GracelandApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Web.Resource;
@@ -50,6 +51,20 @@ namespace GracelandApi.Controllers
         public IActionResult TestAPIPresent()
         {
             return new JsonResult("Api Works!");
+        }
+
+        [HttpGet]
+        [Route("Users")]
+        public IEnumerable<User> GetUsers()
+        {
+            return new User[]
+            {
+                new(new Guid().ToString(), "Jason", "Walker", "mail@example.com"),
+                new(new Guid().ToString(), "Jason", "Walker", "mail@example.com"),
+                new(new Guid().ToString(), "Jason", "Walker", "mail@example.com"),
+                new(new Guid().ToString(), "Jason", "Walker", "mail@example.com"),
+                new(new Guid().ToString(), "Jason", "Walker", "mail@example.com")
+            };
         }
     }
 }
